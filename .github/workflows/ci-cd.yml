@@ -64,5 +64,5 @@ jobs:
         script: |
           cd /home/ubuntu/online-quiz-platform
           git pull origin main
-          docker-compose -f docker-compose.prod.yml down
-          docker-compose -f docker-compose.prod.yml up -d --build
+          docker-compose down
+          docker-compose up -d --build
