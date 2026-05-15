@@ -34,6 +34,8 @@ app.get('/', (req, res) => {
 });
 
 // Import specific routes here (e.g., app.use('/api/quizzes', quizRoutes))
+const authRoutes = require('./routes/authRoutes');
+app.use('/api/auth', authRoutes);
 
 // Connect to DB and Start Server
 if (process.env.NODE_ENV !== 'test') {

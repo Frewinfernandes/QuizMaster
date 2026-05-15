@@ -7,6 +7,8 @@ import QuizMode from './pages/QuizMode';
 import Results from './pages/Results';
 import Leaderboard from './pages/Leaderboard';
 import AdminDashboard from './pages/AdminDashboard';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
             <Route path="/results/:id" element={<Results />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </main>
         <Footer />

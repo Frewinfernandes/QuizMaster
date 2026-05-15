@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { BrainCircuit, Trophy, LayoutDashboard, Menu, X } from 'lucide-react';
+import { BrainCircuit, Trophy, LayoutDashboard, Menu, X, LogIn, UserPlus } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
@@ -43,7 +43,14 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-              <Button variant="primary" size="sm">Sign In</Button>
+              <div className="flex items-center space-x-4 ml-4 border-l border-slate-700 pl-4">
+                <Link to="/login">
+                  <Button variant="ghost" size="sm">Sign In</Button>
+                </Link>
+                <Link to="/register">
+                  <Button variant="primary" size="sm">Sign Up</Button>
+                </Link>
+              </div>
             </div>
           </div>
           
@@ -81,6 +88,25 @@ export default function Navbar() {
                   </Link>
                 );
               })}
+
+              <div className="border-t border-slate-700 pt-2 mt-2 space-y-1">
+                <Link
+                  to="/login"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center space-x-2 text-slate-300 hover:text-white hover:bg-slate-800 block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  <LogIn className="h-5 w-5" />
+                  <span>Sign In</span>
+                </Link>
+                <Link
+                  to="/register"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center space-x-2 text-slate-300 hover:text-white hover:bg-slate-800 block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  <UserPlus className="h-5 w-5" />
+                  <span>Sign Up</span>
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}
