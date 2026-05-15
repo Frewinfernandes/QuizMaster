@@ -63,6 +63,7 @@ jobs:
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
           cd /home/ubuntu/online-quiz-platform
-          git pull origin main
+          git fetch origin
+          git reset --hard origin/main
           docker-compose down
           docker-compose up -d --build
